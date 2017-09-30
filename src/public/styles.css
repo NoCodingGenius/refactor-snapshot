@@ -1,0 +1,54 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-image: url(./images/Clouds.jpg);
+}
+
+.splash-page{
+    background-image: url('./images/splash.jpg');
+    background-size:cover;
+}
+
+.form {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 325px;
+  height: 480px;
+  top: 200px;
+  padding: 25px 20px;
+  position: relative;
+  z-index: 15;
+  border-radius: 5px;
+}
+
+.form h3{
+  text-align:center;
+}
+
+.nav-bar {
+  position: fixed;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: rgba(255,255,255,.95);
+  z-index: 150;
+  width: 100%;
+  height: 80px;
+  padding: 17px;
+}
+.user-info {
+  top:150px;
+  height:250px;
+}
+
+.posts {
+  top:150px;
+  padding-left:20%;
+}
+
+.profile-picture-main {
+  width: 236px;
+  height: 236px;
+  border-radius: 50%;
+}
+
+.review-div {
+  padding: 40px 15px 40px 15px;
+}

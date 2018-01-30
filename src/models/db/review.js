@@ -1,4 +1,4 @@
-const { db } = require('./index');
+const { db } = require('./db');
 
 const displayAll = () => {
   return db.any(`
@@ -13,7 +13,7 @@ const create = (user_id, type_id, title, body, city) => {
   return db.any(`
     INSERT INTO
       reviews(user_id, type_id, title, body, city)
-    VALUES 
+    VALUES
       ($1, $2, $3, $4, $5)
   `, [user_id, type_id, title, body, city])
 };

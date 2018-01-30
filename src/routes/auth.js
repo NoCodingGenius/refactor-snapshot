@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const {
   getByEmail,
   getById,
-} = require('../database/controllers/user');
+} = require('../models/db/user');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 

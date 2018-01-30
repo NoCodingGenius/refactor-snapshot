@@ -2,9 +2,6 @@ const express = require('express');
 
 const pgp = require('pg-promise')();
 
-const connectionString = 'postgres://localhost:5432/roamwfriends';
-const db = pgp(connectionString);
-
 const server = express();
 const port = process.env.PORT || 3000;
 const user = require('./routes/users/user');

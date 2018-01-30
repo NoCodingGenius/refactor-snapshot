@@ -1,5 +1,4 @@
 DROP DATABASE IF EXISTS roamwfriends;
-CREATE DATABASE roamwfriends;
 
 \c roamwfriends;
 

@@ -11,6 +11,7 @@ const login = require('./routes/login/login');
 const review = require('./routes/review');
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const { connectionString } = require('./models/db/db');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);

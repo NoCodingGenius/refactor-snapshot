@@ -1,8 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
-const userFunctions = require('../../database/controllers/user');
-const reviewFunctions = require('../../database/controllers/review');
+const userFunctions = require('../../models/db/user');
+const reviewFunctions = require('../../models/db/review');
 const login = require('../login/login');
 
 router.use('../login/login', login);

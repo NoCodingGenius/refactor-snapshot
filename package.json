@@ -5,10 +5,11 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:init": "psql < ./src/database/schema.sql && psql roamwfriends < node_modules/connect-pg-simple/table.sql",
-    "db:reset": "dropdb roamwfriends && createdb roamwfriends && npm run db:init"
+    "db:init": "psql < ./src/models/db/schema/schema.sql && psql roamwfriends < node_modules/connect-pg-simple/table.sql",
+    "db:create": "createdb roamwfriends",
+    "db:reset": "dropdb roamwfriends && npm run db:create && npm run db:init"
   },
   "repository": {
     "type": "git",

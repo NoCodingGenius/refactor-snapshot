@@ -1,4 +1,4 @@
-const { db, bcrypt } = require('./index');
+const { db, bcrypt } = require('./db');
 
 const saltRounds = 12;
 

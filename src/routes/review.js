@@ -7,7 +7,7 @@ const userFunctions = require('../models/db/user');
 router.get('/', (request, response) => {
   reviewFunctions.displayAll()
     .then((allReviews) => {
-      response.render('cities/view', { user: request.user, reviews: allReviews || null, city: true });
+      response.render('cities/city', { user: request.user, reviews: allReviews || null, city: true });
     });
 });
 
@@ -34,7 +34,7 @@ router.get('/:id', (request, response) => {
     .then((cityReviews) => {
       userFunctions.getById(cityReviews.user_id)
         .then((reviewer) => {
-          response.render('reviews/viewFull', { reviews: cityReviews, user: reviewer, city: true });
+          response.render('reviews/FullUserReview', { reviews: cityReviews, user: reviewer, city: true });
         });
     });
 });

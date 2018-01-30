@@ -17,7 +17,7 @@ router.get('/:city', (request, response) => {
       userFunctions.getById(cityReviews[0].user_id)
         .then((reviewer) => {
         console.log('2city====>', reviewer)
-          response.render('cities/view', { reviews: cityReviews, user: reviewer, city: true });
+          response.render('cities/city', { reviews: cityReviews, user: reviewer, city: true });
         });
     });
 });

@@ -44,10 +44,8 @@ router.get('/updated', (request, response) => {
 
 router.get('/review', (request, response) => {
   const userId = request.user.id
-  console.log( '---===userId===---', userId );
   reviewFunctions.displayUserSpecificReviews(userId)
     .then((allUserReviews) => {
-      console.log( '---===allUserReviews===---', allUserReviews );
       response.render('users/profile', { user: request.session.user, reviews: allUserReviews, city: true });
     });
 });

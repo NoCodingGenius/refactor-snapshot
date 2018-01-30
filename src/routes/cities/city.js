@@ -9,14 +9,11 @@ router.get('/:city', (request, response) => {
 
   reviewFunctions.displayCitySpecificReviews(city)
     .then((cityReviews) => {
-      console.log('city====>', cityReviews)
       return cityReviews;
     })
     .then((cityReviews) => {
-      console.log('city-reviews==>', cityReviews[0].city)
       userFunctions.getById(cityReviews[0].user_id)
         .then((reviewer) => {
-        console.log('2city====>', reviewer)
           response.render('cities/city', { reviews: cityReviews, user: reviewer, city: true });
         });
     });

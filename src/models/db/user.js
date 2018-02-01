@@ -1,45 +1,27 @@
 const { db, bcrypt } = require('./db');
 
-const saltRounds = 12;
-
 const create = (email,password) => {
+  const saltRounds = 12;
   return bcrypt.hash(password, saltRounds)
     .then((hash) => {
-      return db.one(`
-      INSERT INTO
-        users (email, password)
-      VALUES($1, $2)
-      RETURNING *
-      `, [email, hash]);
+      const query = `INSERT INTO users (email, password) VALUES($1, $2) RETURNING *`;
+      return db.one(query, [email, hash]);
     });
 };
 
 const getByEmail = (email) => {
-  return db.oneOrNone(`
-    SELECT *
-    FROM users
-    WHERE
-     email=$1
-    `, [email]);
+  const query = `SELECT * FROM users WHERE email=$1`;
+  return db.oneOrNone(query, [email]);
 };
 
 const getById = (id) => {
-  return db.oneOrNone(`
-    SELECT *
-    FROM users
-    WHERE
-     id=$1
-     `, [id]);
+  const query = `SELECT * FROM users WHERE id=$1`;
+  return db.oneOrNone(query, [id]);
 };
 
 const update = (name, current_city, user_image, id) => {
-  return db.any(`
-    UPDATE users
-    SET (name, current_city, user_image) = ($1,$2,$3)
-    WHERE
-     id = $4
-     RETURNING *
-`, [name, current_city, user_image, id]);
+  const query = `UPDATE users SET (name, current_city, user_image) = ($1,$2,$3) WHERE id = $4 RETURNING *`;
+  return db.any(query, [name, current_city, user_image, id]);
 };
 
 module.exports = {
